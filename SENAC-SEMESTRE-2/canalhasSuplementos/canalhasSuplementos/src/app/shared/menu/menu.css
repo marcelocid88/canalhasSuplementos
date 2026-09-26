@@ -1,0 +1,60 @@
+.menu {
+    background-color: rgba(0, 0, 0, 0.85);
+    height: 100px;
+    width: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#logo-topo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-logo {
+    height: 50px;
+    width: auto;
+}
+
+
+.menu-itens {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.menu-itens a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.menu-itens a:hover {
+    color: #dda317;
+}
+
+#menu-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#menu-esquerda img {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
