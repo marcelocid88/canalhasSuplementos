@@ -1,0 +1,216 @@
+.footer {
+    width: 100%;
+    background-color: #080808;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+.footer-conteudo {
+    max-width: 1400px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 50px 60px;
+    box-sizing: border-box;
+}
+
+
+/* LOGO / MARCA */
+
+.footer-marca {
+    width: 220px;
+}
+
+.footer-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.footer-marca p {
+    color: #aaaaaa;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.footer-marca .slogan {
+    color: #dda317;
+}
+
+
+/* REDES SOCIAIS */
+
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.redes-sociais img {
+    width: 23px;
+    height: 23px;
+
+    cursor: pointer;
+}
+
+
+/* COLUNAS */
+
+.footer-coluna {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer h3 {
+    color: #dda317;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.footer-coluna a {
+    color: #cccccc;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+.footer-coluna a:hover {
+    color: #dda317;
+}
+
+
+/* CONTATO */
+
+.footer-contato {
+    min-width: 250px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #cccccc;
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.contato-item img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* PAGAMENTO */
+
+.footer-pagamento {
+    width: 260px;
+}
+
+.formas-pagamento {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.formas-pagamento img {
+    width: 48px;
+    height: auto;
+}
+
+.titulo-seguranca {
+    margin-top: 30px !important;
+}
+
+
+/* SEGURANÇA */
+
+.seguranca {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.seguranca img {
+    width: 32px;
+    height: 32px;
+}
+
+.seguranca div {
+    display: flex;
+    flex-direction: column;
+}
+
+.seguranca strong {
+    font-size: 12px;
+}
+
+.seguranca span {
+    color: #999999;
+    font-size: 11px;
+}
+
+
+/* COPYRIGHT */
+
+.footer-copyright {
+    border-top: 1px solid #222222;
+
+    text-align: center;
+
+    padding: 18px;
+}
+
+.footer-copyright p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+
+    .footer-conteudo {
+        flex-wrap: wrap;
+        gap: 40px;
+
+        padding: 40px 30px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .footer-conteudo {
+        flex-direction: column;
+    }
+
+    .footer-marca,
+    .footer-pagamento {
+        width: 100%;
+    }
+
+}
