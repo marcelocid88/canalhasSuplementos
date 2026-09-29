@@ -1,0 +1,65 @@
+<div class="tela-login">
+    <div class="card-login largo">
+        <h2>Crie sua conta</h2>
+        <p class="subtitulo-login">Faça parte da Canalha's Suplementos</p>
+
+        <form id="form-cadastro">
+            <div class="grade-formulario">
+
+                <div class="coluna-esquerda">
+                    <div class="grupo-entrada">
+                        <input type="text" id="cadastro-nome" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <input type="email" id="cadastro-email" placeholder="E-mail" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <input type="text" id="cadastro-cpf" placeholder="CPF" required>
+                    </div>
+                    
+                    <div class="grupo-entrada">
+                        <input type="password" id="cadastro-senha" placeholder="Senha" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <input type="password" id="cadastro-confirmar-senha" placeholder="Confirmar senha" required>
+                    </div>
+                </div>
+
+                <div class="coluna-direita">
+                    <div class="grupo-entrada">
+                        <input type="date" id="cadastro-data-nascimento" placeholder="Data de Nascimento" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <input type="tel" id="cadastro-telefone" placeholder="Telefone" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <input type="text" id="cadastro-endereco" placeholder="Endereço" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <input type="number" id="cadastro-numero" placeholder="Número" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <input type="text" id="cadastro-complemento" placeholder="Complemento (opcional)">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="opcoes-checkbox">
+                <label for="checkbox-termos">
+                    <input type="checkbox" id="checkbox-termos" required> Li e aceito os <a href="#">Termos de Uso</a> e
+                    a <a href="#">Política de Privacidade</a>
+                </label>
+                <label for="checkbox-newsletter">
+                    <input type="checkbox" id="checkbox-newsletter"> Quero receber ofertas e novidades por E-mail
+                </label>
+            </div>
+
+            <button type="submit" id="botao-enviar-cadastro" class="botao-ouro">Cadastrar</button>
+
+            <div class="rodape-login">
+                <p>Já tem uma conta? <a href="/login" id="link-ir-login">Faça login</a></p>
+            </div>
+        </form>
+    </div>
+</div>

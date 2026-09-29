@@ -1,0 +1,112 @@
+.tela-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    /* Evita que o menu invada a tela */
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
+}
+
+.card-login {
+    background-color: #161616;
+    border: 1px solid #222;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    /* Cartão mais estreito para o Login */
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-login h2 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+}
+
+.subtitulo-login {
+    text-align: center;
+    color: #e5a93b !important;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+}
+
+.entrada {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.entrada input {
+    width: 100%;
+    padding: 15px;
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.entrada input:focus {
+    border-color: #e5a93b;
+    outline: none;
+}
+
+.botao-ouro {
+    width: 100%;
+    padding: 15px;
+    background-color: #e5a93b;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.botao-ouro:hover {
+    background-color: #c9922f;
+}
+
+.acoes-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    color: #aaa;
+}
+
+.rodape-login {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-family: 'Montserrat', 'Arial Black', sans-serif;
+}
+
+.rodape-login a {
+    color: #e5a93b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.rodape-login a:hover {
+    text-decoration: underline;
+}   

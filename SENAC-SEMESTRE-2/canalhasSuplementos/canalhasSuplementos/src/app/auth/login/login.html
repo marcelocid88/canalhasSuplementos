@@ -1,0 +1,29 @@
+<div class="tela-login">
+    <div class="card-login">
+        <h2>Bem-vindo</h2>
+        <p class="subtitulo-login">Acesse sua conta</p>
+
+        <form id="form-login">
+            <div class="entrada">
+                <input type="text" id="usuario" placeholder="E-mail ou CPF" required>
+            </div>
+            
+            <div class="entrada">
+                <input type="password" id="senha" placeholder="Senha" required>
+            </div>
+
+            <div class="acoes-form">
+                <label for="checkbox-lembrar">
+                    <input type="checkbox" class="checkbox-lembrar"> Lembrar de mim
+                </label>
+            </div>
+
+            <button type="submit" id="botao-enviar-login" class="botao-ouro">Entrar</button>
+
+            <div class="rodape-login">
+                <p>Ainda nao tem conta? <a routerLink="/cadastro" id="link-cadastro">Cadastre-se</a></p>
+            </div>
+
+        </form>
+    </div>
+</div>
