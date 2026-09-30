@@ -21,7 +21,7 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.card-login h2 {
+.card-login h1 {
     font-size: 2.2rem;
     text-transform: uppercase;
     font-weight: 800;
@@ -42,6 +42,7 @@
     letter-spacing: 2px;
     font-weight: bold;
     font-family: 'Montserrat', 'Arial Black', sans-serif;
+    
 }
 
 /* Sistema de Grid de duas colunas para o Cadastro */

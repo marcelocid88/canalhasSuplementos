@@ -1,6 +1,6 @@
 <div class="tela-login">
     <div class="card-login largo">
-        <h2>Crie sua conta</h2>
+        <h1>Crie sua conta</h1>
         <p class="subtitulo-login">Faça parte da Canalha's Suplementos</p>
 
         <form id="form-cadastro">
@@ -27,7 +27,7 @@
 
                 <div class="coluna-direita">
                     <div class="grupo-entrada">
-                        <input type="date" id="cadastro-data-nascimento" placeholder="Data de Nascimento" required>
+                        <input type="date" id="cadastro-data-nascimento" placeholder="Data de Nascimento" onfocus="(this.type='date')" onblur="(this.value == '' ? this.type='text' : this.type='date')" required>
                     </div>
                     <div class="grupo-entrada">
                         <input type="tel" id="cadastro-telefone" placeholder="Telefone" required>
