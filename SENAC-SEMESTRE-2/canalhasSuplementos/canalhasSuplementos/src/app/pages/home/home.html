@@ -60,3 +60,37 @@
         </div>
     </div>
 </div>
+
+<section class="secao-produtos">
+    <div class="cabecalho-secao">
+        <h2 class="titulo-secao">MAIS <span class="destaque-amarelo">VENDIDOS</span></h2>
+        <a routerLink="/produtos" class="link-ver-todos">
+            VER TODOS <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <div class="grid-produtos">
+        @for (produto of produtosMaisVendidos; track produto.id) {
+        <div class="card-produto">
+            <div class="container-imagem-produto">
+                <img [src]="produto.imagemUrl" [alt]="produto.nome">
+            </div>
+            <h3 class="nome-produto">{{produto.nome}}</h3>
+            <p class="detalhe-produto">{{produto.descricao}}</p>
+            <span class="preco-produto">{{produto.preco | currency: 'BRL': 'symbol':'1.2-2' }}</span>
+            <button class="botao-carrinho">
+                <i class="fa-solid fa-cart-shopping"></i> ADICIONAR AO CARRINHO
+            </button>
+        </div>
+        } @empty {
+        <p class="mensagem-vazia">Nenhum produto em destaque encontrado</p>
+        }
+    </div>
+</section>
+
+<section class="banner-motivacional">
+    <div class="conteudo-motivacional">
+        <h2 class="titulo-motivacional">DISCIPLINA HOJE</h2>
+        <h3 class="subtitulo-motivacional">RESULTADOS SEMPRE</h3>
+    </div>
+</section>

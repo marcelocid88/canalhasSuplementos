@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset global de margens e box-sizing */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Evita que a página crie barra de rolagem horizontal */
+  background-color: #050505;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
