@@ -3,11 +3,11 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   imports: [RouterLink],
-  selector: 'app-login',
-  styleUrls: ['../auth.css', './login.css'],
-  templateUrl: './login.html',
+  selector: 'app-login-colaborador',
+  styleUrls: ['../auth.css', './login-colaborador.css'],
+  templateUrl: './login-colaborador.html',
 })
-export class Login {
+export class LoginColaborador {
   constructor(private router: Router) {}
 
   entrar(evento: Event) {
