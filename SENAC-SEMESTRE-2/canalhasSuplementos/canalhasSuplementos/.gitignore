@@ -43,3 +43,6 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 ~/Estudos/SENAC-SEMESTRE-2/
+
+# Agents
+.agents/
