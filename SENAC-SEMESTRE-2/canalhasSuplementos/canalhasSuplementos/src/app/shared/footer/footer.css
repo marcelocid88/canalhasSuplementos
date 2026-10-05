@@ -5,9 +5,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-/* CONTEÚDO PRINCIPAL */
-
 .footer-conteudo {
     max-width: 1400px;
     margin: 0 auto;
@@ -18,9 +15,6 @@
     padding: 50px 60px;
     box-sizing: border-box;
 }
-
-
-/* LOGO / MARCA */
 
 .footer-marca {
     width: 220px;
@@ -43,9 +37,6 @@
     color: #dda317;
 }
 
-
-/* REDES SOCIAIS */
-
 .redes-sociais {
     display: flex;
     gap: 15px;
@@ -59,9 +50,6 @@
 
     cursor: pointer;
 }
-
-
-/* COLUNAS */
 
 .footer-coluna {
     display: flex;
@@ -92,9 +80,6 @@
     color: #dda317;
 }
 
-
-/* CONTATO */
-
 .footer-contato {
     min-width: 250px;
 }
@@ -116,9 +101,6 @@
     height: 20px;
 }
 
-
-/* PAGAMENTO */
-
 .footer-pagamento {
     width: 260px;
 }
@@ -138,9 +120,6 @@
 .titulo-seguranca {
     margin-top: 30px !important;
 }
-
-
-/* SEGURANÇA */
 
 .seguranca {
     display: flex;
@@ -168,9 +147,6 @@
     font-size: 11px;
 }
 
-
-/* COPYRIGHT */
-
 .footer-copyright {
     border-top: 1px solid #222222;
 
@@ -187,9 +163,6 @@
     font-size: 12px;
 }
 
-
-/* RESPONSIVIDADE */
-
 @media (max-width: 900px) {
 
     .footer-conteudo {
@@ -200,7 +173,6 @@
     }
 
 }
-
 
 @media (max-width: 600px) {
 
