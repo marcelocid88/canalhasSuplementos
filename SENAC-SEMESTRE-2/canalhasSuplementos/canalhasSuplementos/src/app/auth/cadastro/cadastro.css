@@ -15,7 +15,6 @@
     border-radius: 12px;
     width: 100%;
     max-width: 750px;
-    /* Cartão largo para acomodar as duas colunas do cadastro */
     padding: 40px;
     box-sizing: border-box;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -45,14 +44,12 @@
     
 }
 
-/* Sistema de Grid de duas colunas para o Cadastro */
 .grade-formulario {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-/* Transforma o formulário em uma única coluna em telas de celulares */
 @media (max-width: 650px) {
     .grade-formulario {
         grid-template-columns: 1fr;

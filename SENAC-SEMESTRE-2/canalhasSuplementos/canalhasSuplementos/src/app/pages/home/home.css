@@ -4,11 +4,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Contentor ocupando 100% da largura da tela */
 .contentor-banner {
   position: relative;
   width: 100%;
-  min-height: 85vh; /* Ocupa quase a altura total da tela */
+  min-height: 85vh;
   background-color: #050505;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0.7) 100%), 
                     url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=1600&auto=format&fit=crop');
@@ -21,7 +20,6 @@
   box-sizing: border-box;
 }
 
-/* Conteúdo */
 .conteudo-banner {
   max-width: 600px;
   z-index: 2;
@@ -92,21 +90,27 @@
   background: linear-gradient(180deg, #fcd043 0%, #e59d0a 100%);
 }
 
-/* Barra de Benefícios Rodapé */
 .barra-beneficios {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 50px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20;
+  padding: 30px 5%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
 }
 
 .item-beneficio {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 15px;
+  flex: 1;
+}
+.item-beneficio i, .item-beneficio img {
+  font-size: 28px;
+  color: #f7c325;
+  flex-shrink: 0; 
 }
 
 .icone-beneficio {
@@ -135,13 +139,172 @@
   font-weight: 500;
   margin-top: 2px;
 }
+.secao-produtos{
+  width: 100%;
+  padding: 60px 80px;
+  background-color: #080808;
+}
+.cabecalho-secao{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+.titulo-secao{
+  font-size: 32px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.destaque-amarelo {
+  color: #f7c325;
+}
 
-/* Responsividade */
+.link-ver-todos {
+  color: #f7c325;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 1px;
+  transition: opacity 0.2s;
+}
+.link-ver-todos:hover {
+  opacity: 0.8;
+}
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.card-produto {
+  background-color: #111111;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.card-produto:hover {
+  transform: translateY(-6px);
+  border-color: #f7c325;
+}
+.container-imagem-produto {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161616;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+.container-imagem-produto img {
+  max-height: 140px;
+  object-fit: contain;
+}
+.nome-produto {
+  font-size: 16px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.detalhe-produto {
+  font-size: 12px;
+  color: #888888;
+  margin: 0 0 16px 0;
+  font-weight: 500;
+}
+
+.preco-produto {
+  font-size: 20px;
+  font-weight: 900;
+  color: #f7c325;
+  margin-bottom: 18px;
+}
+.botao-carrinho {
+  width: 100%;
+  background: linear-gradient(180deg, #f7c325 0%, #d89305 100%);
+  color: #000000;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(247, 195, 37, 0.2);
+}
+.botao-carrinho:hover {
+  background: linear-gradient(180deg, #fcd043 0%, #e59d0a 100%);
+  box-shadow: 0 6px 15px rgba(247, 195, 37, 0.4);
+}
+.mensagem-vazia {
+  grid-column: span 4;
+  text-align: center;
+  color: #777777;
+  font-size: 14px;
+}
+.banner-motivacional {
+  width: 100%;
+  height: 320px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%), 
+                    url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 100px;
+  box-sizing: border-box;
+}
+.conteudo-motivacional {
+  text-align: right;
+}
+
+.titulo-motivacional {
+  font-size: 42px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.subtitulo-motivacional {
+  font-size: 48px;
+  font-weight: 900;
+  color: #f7c325;
+  margin: 6px 0 0 0;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 @media (max-width: 992px) {
   .contentor-banner { padding: 40px 30px; }
   .titulo-principal { font-size: 42px; }
   .titulo-destaque { font-size: 48px; }
-  .barra-beneficios { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .barra-beneficios { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+  .secao-produtos { padding: 40px 30px; }
+  .grid-produtos { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .banner-motivacional { padding-right: 40px; justify-content: center; }
+  .conteudo-motivacional { text-align: center; }
 }
 
 @media (max-width: 600px) {
@@ -149,4 +312,8 @@
   .titulo-principal { font-size: 32px; }
   .titulo-destaque { font-size: 38px; }
   .barra-beneficios { grid-template-columns: 1fr; gap: 15px; }
+  .secao-produtos { padding: 30px 20px; }
+  .grid-produtos { grid-template-columns: 1fr; }
+  .titulo-motivacional { font-size: 28px; }
+  .subtitulo-motivacional { font-size: 32px; }
 }
