@@ -1,0 +1,32 @@
+.cabecalho-lista,
+.item-lista {
+    grid-template-columns: 44px minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 1fr) 38px;
+}
+
+.item-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(247, 195, 37, 0.08);
+    border: 1px solid rgba(247, 195, 37, 0.5);
+    border-radius: 50%;
+    color: #f7c325;
+    font-size: 16px;
+}
+
+.item-matricula strong {
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    .item-lista {
+        grid-template-columns: 44px minmax(0, 1fr) 38px;
+    }
+
+    .item-matricula,
+    .item-tags {
+        display: none;
+    }
+}

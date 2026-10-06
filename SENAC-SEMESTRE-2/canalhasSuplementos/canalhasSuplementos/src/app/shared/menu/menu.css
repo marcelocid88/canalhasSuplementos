@@ -59,3 +59,21 @@
     width: 25px;
     cursor: pointer;
 }
+
+.botao-admin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid #dda317;
+    border-radius: 4px;
+    color: #dda317;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.botao-admin:hover {
+    background-color: #dda317;
+    color: black;
+}
