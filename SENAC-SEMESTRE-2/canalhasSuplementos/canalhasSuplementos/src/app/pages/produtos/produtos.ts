@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../../models/produtos.model';
 import { ProdutosService } from '../../services/produtos.service';
+import { CarrinhoService } from '../../services/carrinho.service';
 import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { categoriaProduto } from '../../models/produtos.model';
@@ -30,7 +31,10 @@ export class Produtos implements OnInit{
     { label: 'Acessórios', valor: categoriaProduto.ACESSORIOS }
   ];
 
-  constructor(private produtosService: ProdutosService) {}
+  constructor(
+    private produtosService: ProdutosService,
+    private carrinhoService: CarrinhoService
+  ) {}
 
   ngOnInit(): void {
     const todosProdutos$ = this.produtosService.getProdutos();
@@ -47,5 +51,9 @@ export class Produtos implements OnInit{
 
   filtrarPorCategoria(categoria: string): void {
     this.categoriaSelecionada$.next(categoria);
+  }
+
+  adicionarAoCarrinho(produto: Produto): void {
+    this.carrinhoService.adicionarAoCarrinho(produto);
   }
 }

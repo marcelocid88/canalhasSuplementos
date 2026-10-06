@@ -78,7 +78,7 @@
             <h3 class="nome-produto">{{produto.nome}}</h3>
             <p class="detalhe-produto">{{produto.descricao}}</p>
             <span class="preco-produto">{{produto.preco | currency: 'BRL': 'symbol':'1.2-2' }}</span>
-            <button class="botao-carrinho">
+            <button class="botao-carrinho" (click)="adicionarAoCarrinho(produto)">
                 <i class="fa-solid fa-cart-shopping"></i> ADICIONAR AO CARRINHO
             </button>
         </div>

@@ -54,7 +54,7 @@ export class ProdutosService{
             categoria: categoriaProduto.VESTIMENTAS
         },
         {
-            id: 5,
+            id: 6,
             nome: 'GARRAFA CANALHAS',
             descricao: 'Coqueteleira de treino 700ml',
             preco: 19.90,
