@@ -1,1 +1,32 @@
-<p>produtos works!</p>
+<div class="pagina-produtos">
+    <header class="banner-secao">
+        <h1>TODOS OS <span class="destaque-amarelo">PRODUTOS</span></h1>
+        <p>Os melhores suplementos para potencializar a sua performance e treino.</p>
+    </header>
+
+    <div class="contentor-produtos">
+        <div class="barra-filtros">
+            <button *ngFor="let cat of categorias" class="btn-filtro"
+                [class.ativo]="(categoriaSelecionada$ | async) === cat.valor" 
+                (click)="filtrarPorCategoria(cat.valor ?? '')">
+                {{ cat.label }}
+            </button>
+        </div>
+
+        <div class="grid-produtos">
+            <div class="card-produto" *ngFor="let produto of produtosFiltrados$ | async">
+                <div class="wrapper-imagem">
+                    <img [src]="produto.imagemUrl" [alt]="produto.nome" />
+                </div>
+                <div class="info-card">
+                    <h3 class="nome-produto">{{ produto.nome }}</h3>
+                    <p class="descricao-produto">{{ produto.descricao }}</p>
+                    <span class="preco-produto">R$ {{ produto.preco | number:'1.2-2' }}</span>
+                    <button class="btn-adicionar">
+                        <i class="fa-solid fa-cart-shopping"></i> ADICIONAR AO CARRINHO
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

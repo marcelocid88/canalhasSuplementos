@@ -5,6 +5,7 @@ import { Cadastro } from './auth/cadastro/cadastro';
 import { Produtos } from './pages/produtos/produtos';
 import { LoginColaborador } from './auth/login-colaborador/login-colaborador';
 import { CadastroColaborador } from './auth/cadastro-colaborador/cadastro-colaborador';
+import { Cart } from './pages/cart/cart';
 
 export const routes: Routes = [
     { path:'', component:Home },
@@ -13,4 +14,7 @@ export const routes: Routes = [
     { path:'colaborador/login', component:LoginColaborador },
     { path:'colaborador/cadastro', component:CadastroColaborador },
     { path:'produtos', component:Produtos}
+    { path:'produtos', component:Produtos},
+    { path:'cart', component:Cart}
+
 ];

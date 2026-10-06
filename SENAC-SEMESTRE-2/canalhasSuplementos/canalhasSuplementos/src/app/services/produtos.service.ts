@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
-import { Produto } from "../models/produtos.model";
+import { categoriaProduto, Produto } from "../models/produtos.model";
 
 @Injectable({
     providedIn: 'root'
@@ -13,8 +13,9 @@ export class ProdutosService{
             nome: 'WHEY PROTEIN',
             descricao: 'Concentrado 900g',
             preco: 119.90,
-            imagemUrl: '',
-            maisVendido: true
+            imagemUrl: '/public/assets/produtos/whey.png',
+            maisVendido: true,
+            categoria: categoriaProduto.PROTEINAS
         },
         {
             id: 2,
@@ -22,7 +23,8 @@ export class ProdutosService{
             descricao: 'Monohidratada 300g',
             preco: 69.90,
             imagemUrl: '',
-            maisVendido: true
+            maisVendido: true,
+            categoria: categoriaProduto.CREATINA
         },
         {
             id: 3,
@@ -30,7 +32,8 @@ export class ProdutosService{
             descricao: 'Insano 300g',
             preco: 89.90,
             imagemUrl: '',
-            maisVendido: true
+            maisVendido: true,
+            categoria: categoriaProduto.PRE_TREINO
         },
         {
             id: 4,
@@ -38,7 +41,26 @@ export class ProdutosService{
             descricao: '120 cápsulas',
             preco: 49.90,
             imagemUrl: '',
-            maisVendido: true
+            maisVendido: true,
+            categoria: categoriaProduto.VITAMINAS
+        },
+        {
+            id: 5,
+            nome: 'CAMISETA DE TREINO CANALHAS',
+            descricao: 'Tamanhos P, M, G e GG',
+            preco: 49.90,
+            imagemUrl: '',
+            maisVendido: false,
+            categoria: categoriaProduto.VESTIMENTAS
+        },
+        {
+            id: 5,
+            nome: 'GARRAFA CANALHAS',
+            descricao: 'Coqueteleira de treino 700ml',
+            preco: 19.90,
+            imagemUrl: '',
+            maisVendido: false,
+            categoria: categoriaProduto.ACESSORIOS
         }
     ];
 

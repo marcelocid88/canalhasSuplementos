@@ -1,0 +1,162 @@
+:host {
+  display: block;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+.pagina-produtos {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #050505;
+  color: #ffffff;
+}
+
+.banner-secao {
+  padding: 50px 5% 30px 5%;
+  background: linear-gradient(180deg, #111111 0%, #050505 100%);
+  border-bottom: 1px solid #1f1f1f;
+  text-align: center;
+}
+
+.banner-secao h1 {
+  font-size: 36px;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.destaque-amarelo {
+  color: #f7c325;
+}
+
+.banner-secao p {
+  color: #a0a0a0;
+  margin: 0;
+  font-size: 15px;
+}
+
+.contentor-produtos {
+  padding: 40px 5%;
+}
+
+.barra-filtros {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.btn-filtro {
+  background-color: #111111;
+  border: 1px solid #222222;
+  color: #cccccc;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-filtro:hover,
+.btn-filtro.ativo {
+  background-color: #f7c325;
+  color: #000000;
+  border-color: #f7c325;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card-produto {
+  background-color: #111111;
+  border: 1px solid #1f1f1f;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card-produto:hover {
+  transform: translateY(-4px);
+  border-color: #f7c325;
+}
+
+.wrapper-imagem {
+  width: 100%;
+  height: 180px;
+  background-color: #181818;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.wrapper-imagem img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.nome-produto {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 5px 0;
+}
+
+.descricao-produto {
+  font-size: 13px;
+  color: #888888;
+  margin: 0 0 15px 0;
+}
+
+.preco-produto {
+  font-size: 22px;
+  font-weight: 900;
+  color: #f7c325;
+  margin-bottom: 15px;
+}
+
+.btn-adicionar {
+  width: 100%;
+  background-color: #f7c325;
+  color: #000000;
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-adicionar:hover {
+  background-color: #e0b020;
+}
+
+@media (max-width: 1024px) {
+  .grid-produtos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-produtos {
+    grid-template-columns: 1fr;
+  }
+}
