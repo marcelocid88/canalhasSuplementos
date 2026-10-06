@@ -22,7 +22,7 @@
                     <h3 class="nome-produto">{{ produto.nome }}</h3>
                     <p class="descricao-produto">{{ produto.descricao }}</p>
                     <span class="preco-produto">R$ {{ produto.preco | number:'1.2-2' }}</span>
-                    <button class="btn-adicionar">
+                    <button class="btn-adicionar" (click)="adicionarAoCarrinho(produto)">
                         <i class="fa-solid fa-cart-shopping"></i> ADICIONAR AO CARRINHO
                     </button>
                 </div>

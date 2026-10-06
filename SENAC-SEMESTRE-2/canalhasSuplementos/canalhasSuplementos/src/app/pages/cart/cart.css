@@ -68,8 +68,23 @@
 }
 
 
-.produto:nth-child(3) {
+.produto:last-of-type {
     border-radius: 0 0 5px 5px;
+}
+
+
+.carrinho-vazio {
+    margin: 0;
+
+    padding: 40px 20px;
+
+    background-color: #181b1c;
+
+    border-radius: 5px;
+
+    color: #cccccc;
+
+    text-align: center;
 }
 
 
