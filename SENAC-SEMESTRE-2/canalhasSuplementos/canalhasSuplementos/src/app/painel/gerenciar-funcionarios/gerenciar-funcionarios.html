@@ -1,0 +1,195 @@
+<div class="tela-painel">
+    <header class="cabecalho-painel">
+        <div class="titulo-painel">
+            <span class="etiqueta"><i class="fa-solid fa-lock"></i> Área restrita</span>
+            <h1>Gestão de <span class="destaque-amarelo">funcionários</span></h1>
+            <p>Adicione novos membros à equipe e remova quem não faz mais parte do time.</p>
+        </div>
+
+        <nav class="abas-painel" aria-label="Seções do painel">
+            <a routerLink="/colaborador/produtos" id="aba-produtos"><i class="fa-solid fa-boxes-stacked"></i> Produtos</a>
+            <a routerLink="/colaborador/funcionarios" class="ativa" id="aba-funcionarios"><i class="fa-solid fa-users"></i> Funcionários</a>
+        </nav>
+    </header>
+
+    <div class="conteudo-painel">
+        <ul class="cartoes-resumo">
+            <li>
+                <i class="fa-solid fa-users"></i>
+                <div><strong>{{ funcionarios.length }}</strong><small>Funcionários ativos</small></div>
+            </li>
+            <li>
+                <i class="fa-solid fa-sitemap"></i>
+                <div><strong>{{ setores.length }}</strong><small>Setores</small></div>
+            </li>
+            <li>
+                <i class="fa-solid fa-briefcase"></i>
+                <div><strong>{{ cargos.length }}</strong><small>Cargos</small></div>
+            </li>
+        </ul>
+
+        <div class="grade-painel">
+
+            <section class="card-painel destaque">
+                <div class="cabecalho-card">
+                    <p class="subtitulo">Cadastro</p>
+                    <h2>Novo funcionário</h2>
+                </div>
+
+                <form id="form-cadastro-funcionario" (submit)="cadastrar($event)">
+
+                    <h3 class="secao-form">Dados pessoais</h3>
+                    <div class="grade-form">
+                        <div class="campo inteiro">
+                            <label for="funcionario-nome">Nome completo</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text" id="funcionario-nome" required minlength="3" placeholder="Nome completo do funcionário">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="funcionario-cpf">CPF</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-id-card"></i>
+                                <input type="text" id="funcionario-cpf" required placeholder="Somente números" inputmode="numeric">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="funcionario-telefone">Telefone</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="tel" id="funcionario-telefone" required placeholder="DDD + número">
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="secao-form">Dados profissionais</h3>
+                    <div class="grade-form">
+                        <div class="campo">
+                            <label for="funcionario-matricula">Matrícula</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-id-badge"></i>
+                                <input type="text" id="funcionario-matricula" required placeholder="Ex.: CS0001">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="funcionario-data-admissao">Data de admissão</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                <input type="date" id="funcionario-data-admissao" required>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="funcionario-cargo">Cargo</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <select id="funcionario-cargo" required>
+                                    <option value="" disabled selected>Selecione</option>
+                                    @for (cargo of cargos; track cargo) {
+                                    <option [value]="cargo">{{ cargo }}</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="funcionario-setor">Setor</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-sitemap"></i>
+                                <select id="funcionario-setor" required>
+                                    <option value="" disabled selected>Selecione</option>
+                                    @for (setor of setores; track setor) {
+                                    <option [value]="setor">{{ setor }}</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="secao-form">Acesso</h3>
+                    <div class="grade-form">
+                        <div class="campo inteiro">
+                            <label for="funcionario-email">E-mail corporativo</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="funcionario-email" required placeholder="nome@canalhas.com.br">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="opcoes-form">
+                        <label for="checkbox-enviar-convite">
+                            <input type="checkbox" id="checkbox-enviar-convite" checked>
+                            <span>Enviar convite de acesso para o e-mail corporativo</span>
+                        </label>
+                    </div>
+
+                    <div class="acoes-form">
+                        <button type="reset" id="botao-limpar-funcionario" class="botao-contorno">Limpar</button>
+                        <button type="submit" id="botao-enviar-cadastro-funcionario" class="botao-ouro">
+                            Adicionar funcionário <i class="fa-solid fa-user-plus"></i>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card-painel">
+                <div class="cabecalho-card com-busca">
+                    <div>
+                        <p class="subtitulo">Equipe</p>
+                        <h2>Funcionários cadastrados</h2>
+                    </div>
+
+                    <div class="campo-entrada busca">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="busca-funcionario" placeholder="Buscar funcionário" aria-label="Buscar funcionário">
+                    </div>
+                </div>
+
+                <div class="cabecalho-lista" aria-hidden="true">
+                    <span></span>
+                    <span>Funcionário</span>
+                    <span>Matrícula</span>
+                    <span>Cargo / Setor</span>
+                    <span></span>
+                </div>
+
+                <ul class="lista-itens">
+                    @for (funcionario of funcionarios; track funcionario.id) {
+                    <li class="item-lista">
+                        <div class="item-avatar">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="item-info">
+                            <strong>{{ funcionario.nome }}</strong>
+                            <small>{{ funcionario.email }}</small>
+                        </div>
+
+                        <div class="item-info item-matricula">
+                            <strong>{{ funcionario.matricula }}</strong>
+                            <small>Desde {{ funcionario.dataAdmissao }}</small>
+                        </div>
+
+                        <div class="item-tags">
+                            <span class="tag ouro">{{ funcionario.cargo }}</span>
+                            <span class="tag">{{ funcionario.setor }}</span>
+                        </div>
+
+                        <button type="button" class="botao-remover" title="Remover funcionário">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </li>
+                    } @empty {
+                    <li class="mensagem-vazia">Nenhum funcionário cadastrado.</li>
+                    }
+                </ul>
+            </section>
+
+        </div>
+    </div>
+</div>

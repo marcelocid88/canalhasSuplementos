@@ -1,0 +1,159 @@
+<div class="tela-painel">
+    <header class="cabecalho-painel">
+        <div class="titulo-painel">
+            <span class="etiqueta"><i class="fa-solid fa-lock"></i> Área restrita</span>
+            <h1>Gestão de <span class="destaque-amarelo">produtos</span></h1>
+            <p>Cadastre novos itens no catálogo e remova os que não estão mais à venda.</p>
+        </div>
+
+        <nav class="abas-painel" aria-label="Seções do painel">
+            <a routerLink="/colaborador/produtos" class="ativa" id="aba-produtos"><i class="fa-solid fa-boxes-stacked"></i> Produtos</a>
+            <a routerLink="/colaborador/funcionarios" id="aba-funcionarios"><i class="fa-solid fa-users"></i> Funcionários</a>
+        </nav>
+    </header>
+
+    <div class="conteudo-painel">
+        <ul class="cartoes-resumo">
+            <li>
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <div><strong>{{ produtos.length }}</strong><small>Produtos cadastrados</small></div>
+            </li>
+            <li>
+                <i class="fa-solid fa-layer-group"></i>
+                <div><strong>{{ categorias.length }}</strong><small>Categorias</small></div>
+            </li>
+            <li>
+                <i class="fa-solid fa-fire"></i>
+                <div><strong>{{ maisVendidos }}</strong><small>Mais vendidos</small></div>
+            </li>
+        </ul>
+
+        <div class="grade-painel">
+
+            <section class="card-painel destaque">
+                <div class="cabecalho-card">
+                    <p class="subtitulo">Cadastro</p>
+                    <h2>Novo produto</h2>
+                </div>
+
+                <form id="form-cadastro-produto" (submit)="cadastrar($event)">
+
+                    <h3 class="secao-form">Informações</h3>
+                    <div class="grade-form">
+                        <div class="campo inteiro">
+                            <label for="produto-nome">Nome do produto</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-tag"></i>
+                                <input type="text" id="produto-nome" required minlength="3" placeholder="Ex.: Whey Protein">
+                            </div>
+                        </div>
+
+                        <div class="campo inteiro">
+                            <label for="produto-descricao">Descrição</label>
+                            <div class="campo-entrada texto-longo">
+                                <i class="fa-solid fa-align-left"></i>
+                                <textarea id="produto-descricao" rows="3" required placeholder="Ex.: Concentrado 900g"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="produto-preco">Preço</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-brazilian-real-sign"></i>
+                                <input type="number" id="produto-preco" required min="0" step="0.01" placeholder="0,00">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="produto-categoria">Categoria</label>
+                            <div class="campo-entrada">
+                                <i class="fa-solid fa-layer-group"></i>
+                                <select id="produto-categoria" required>
+                                    <option value="" disabled selected>Selecione</option>
+                                    @for (categoria of categorias; track categoria) {
+                                    <option [value]="categoria">{{ categoria }}</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="secao-form">Imagem</h3>
+                    <label class="area-upload" for="produto-imagem">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <strong>Clique para enviar a imagem</strong>
+                        <small>PNG ou JPG com fundo transparente</small>
+                        <input type="file" id="produto-imagem" accept="image/png, image/jpeg">
+                    </label>
+
+                    <div class="opcoes-form">
+                        <label for="checkbox-mais-vendido">
+                            <input type="checkbox" id="checkbox-mais-vendido">
+                            <span>Exibir na vitrine de mais vendidos</span>
+                        </label>
+                    </div>
+
+                    <div class="acoes-form">
+                        <button type="reset" id="botao-limpar-produto" class="botao-contorno">Limpar</button>
+                        <button type="submit" id="botao-enviar-cadastro-produto" class="botao-ouro">
+                            Cadastrar produto <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card-painel">
+                <div class="cabecalho-card com-busca">
+                    <div>
+                        <p class="subtitulo">Catálogo</p>
+                        <h2>Produtos cadastrados</h2>
+                    </div>
+
+                    <div class="campo-entrada busca">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="busca-produto" placeholder="Buscar produto" aria-label="Buscar produto">
+                    </div>
+                </div>
+
+                <div class="cabecalho-lista" aria-hidden="true">
+                    <span></span>
+                    <span>Produto</span>
+                    <span>Categoria</span>
+                    <span>Preço</span>
+                    <span></span>
+                </div>
+
+                <ul class="lista-itens">
+                    @for (produto of produtos; track produto.id) {
+                    <li class="item-lista">
+                        <div class="item-imagem">
+                            <img [src]="produto.imagemUrl" [alt]="produto.nome">
+                        </div>
+
+                        <div class="item-info">
+                            <strong>{{ produto.nome }}</strong>
+                            <small>{{ produto.descricao }}</small>
+                        </div>
+
+                        <div class="item-tags">
+                            <span class="tag">{{ produto.categoria }}</span>
+                            @if (produto.maisVendido) {
+                            <span class="tag ouro"><i class="fa-solid fa-fire"></i> Mais vendido</span>
+                            }
+                        </div>
+
+                        <strong class="item-preco">{{ produto.preco | currency: 'BRL': 'symbol':'1.2-2' }}</strong>
+
+                        <button type="button" class="botao-remover" title="Remover produto">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </li>
+                    } @empty {
+                    <li class="mensagem-vazia">Nenhum produto cadastrado.</li>
+                    }
+                </ul>
+            </section>
+
+        </div>
+    </div>
+</div>
