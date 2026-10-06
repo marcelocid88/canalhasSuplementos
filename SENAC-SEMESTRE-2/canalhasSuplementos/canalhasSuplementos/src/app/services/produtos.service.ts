@@ -13,7 +13,7 @@ export class ProdutosService{
             nome: 'WHEY PROTEIN',
             descricao: 'Concentrado 900g',
             preco: 119.90,
-            imagemUrl: '',
+            imagemUrl: '/public/assets/produtos/whey.png',
             maisVendido: true,
             categoria: categoriaProduto.PROTEINAS
         },
