@@ -1,65 +1,149 @@
-<div class="tela-login">
-    <div class="card-login largo">
-        <h1>Crie sua conta</h1>
-        <p class="subtitulo-login">Faça parte da Canalha's Suplementos</p>
+<div class="tela-auth">
+    <div class="card-auth largo">
 
-        <form id="form-cadastro">
-            <div class="grade-formulario">
+        <aside class="painel-marca">
+            <div>
+                <img src="/assets/logo/canalhas-logo.png" alt="Canalha's Suplementos" class="logo">
+            </div>
 
-                <div class="coluna-esquerda">
-                    <div class="grupo-entrada">
-                        <input type="text" id="cadastro-nome" placeholder="Nome Completo" required>
+            <div>
+                <span class="etiqueta"><i class="fa-solid fa-bolt"></i> Novo por aqui?</span>
+                <h1 class="titulo-marca">Supere seus <span>limites</span></h1>
+            </div>
+
+            <ul class="lista-beneficios">
+                <li>
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <div><strong>Entrega rápida</strong><small>Para todo o Brasil</small></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-credit-card"></i>
+                    <div><strong>Compra segura</strong><small>Seus dados protegidos</small></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-headset"></i>
+                    <div><strong>Atendimento especializado</strong><small>Suporte de verdade</small></div>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="painel-form">
+            <div class="cabecalho-form">
+                <p class="subtitulo">Faça parte da Canalha's Suplementos</p>
+                <h2>Crie sua conta</h2>
+            </div>
+
+            <form id="form-cadastro" (submit)="cadastrar($event)">
+
+                <h3 class="secao-form">Dados pessoais</h3>
+                <div class="grade-form">
+                    <div class="campo inteiro">
+                        <label for="cadastro-nome">Nome completo</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="cadastro-nome" required minlength="3" placeholder="Seu nome completo" autocomplete="name">
+                        </div>
                     </div>
-                    <div class="grupo-entrada">
-                        <input type="email" id="cadastro-email" placeholder="E-mail" required>
+
+                    <div class="campo">
+                        <label for="cadastro-cpf">CPF</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-id-card"></i>
+                            <input type="text" id="cadastro-cpf" required placeholder="Somente números" inputmode="numeric">
+                        </div>
                     </div>
-                    <div class="grupo-entrada">
-                        <input type="text" id="cadastro-cpf" placeholder="CPF" required>
+
+                    <div class="campo">
+                        <label for="cadastro-data-nascimento">Data de nascimento</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-calendar"></i>
+                            <input type="date" id="cadastro-data-nascimento" required autocomplete="bday">
+                        </div>
                     </div>
-                    
-                    <div class="grupo-entrada">
-                        <input type="password" id="cadastro-senha" placeholder="Senha" required>
-                    </div>
-                    <div class="grupo-entrada">
-                        <input type="password" id="cadastro-confirmar-senha" placeholder="Confirmar senha" required>
+
+                    <div class="campo inteiro">
+                        <label for="cadastro-telefone">Telefone</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="cadastro-telefone" required placeholder="DDD + número" autocomplete="tel">
+                        </div>
                     </div>
                 </div>
 
-                <div class="coluna-direita">
-                    <div class="grupo-entrada">
-                        <input type="date" id="cadastro-data-nascimento" placeholder="Data de Nascimento" onfocus="(this.type='date')" onblur="(this.value == '' ? this.type='text' : this.type='date')" required>
+                <h3 class="secao-form">Endereço</h3>
+                <div class="grade-form">
+                    <div class="campo inteiro">
+                        <label for="cadastro-endereco">Endereço</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input type="text" id="cadastro-endereco" required placeholder="Rua, avenida..." autocomplete="street-address">
+                        </div>
                     </div>
-                    <div class="grupo-entrada">
-                        <input type="tel" id="cadastro-telefone" placeholder="Telefone" required>
+
+                    <div class="campo">
+                        <label for="cadastro-numero">Número</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-hashtag"></i>
+                            <input type="text" id="cadastro-numero" required placeholder="123" inputmode="numeric">
+                        </div>
                     </div>
-                    <div class="grupo-entrada">
-                        <input type="text" id="cadastro-endereco" placeholder="Endereço" required>
-                    </div>
-                    <div class="grupo-entrada">
-                        <input type="number" id="cadastro-numero" placeholder="Número" required>
-                    </div>
-                    <div class="grupo-entrada">
-                        <input type="text" id="cadastro-complemento" placeholder="Complemento (opcional)">
+
+                    <div class="campo">
+                        <label for="cadastro-complemento">Complemento <small>(opcional)</small></label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-building"></i>
+                            <input type="text" id="cadastro-complemento" placeholder="Apto, bloco...">
+                        </div>
                     </div>
                 </div>
 
-            </div>
+                <h3 class="secao-form">Acesso</h3>
+                <div class="grade-form">
+                    <div class="campo inteiro">
+                        <label for="cadastro-email">E-mail</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="cadastro-email" required placeholder="seuemail@exemplo.com" autocomplete="email">
+                        </div>
+                    </div>
 
-            <div class="opcoes-checkbox">
-                <label for="checkbox-termos">
-                    <input type="checkbox" id="checkbox-termos" required> Li e aceito os <a href="#">Termos de Uso</a> e
-                    a <a href="#">Política de Privacidade</a>
-                </label>
-                <label for="checkbox-newsletter">
-                    <input type="checkbox" id="checkbox-newsletter"> Quero receber ofertas e novidades por E-mail
-                </label>
-            </div>
+                    <div class="campo">
+                        <label for="cadastro-senha">Senha</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="cadastro-senha" required placeholder="Crie uma senha" autocomplete="new-password">
+                        </div>
+                    </div>
 
-            <button type="submit" id="botao-enviar-cadastro" class="botao-ouro">Cadastrar</button>
+                    <div class="campo">
+                        <label for="cadastro-confirmar-senha">Confirmar senha</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="cadastro-confirmar-senha" required placeholder="Repita a senha" autocomplete="new-password">
+                        </div>
+                    </div>
+                </div>
 
-            <div class="rodape-login">
-                <p>Já tem uma conta? <a href="/login" id="link-ir-login">Faça login</a></p>
-            </div>
-        </form>
+                <div class="opcoes-form coluna">
+                    <label for="checkbox-termos">
+                        <input type="checkbox" id="checkbox-termos" required>
+                        <span>Li e aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a></span>
+                    </label>
+                    <label for="checkbox-newsletter">
+                        <input type="checkbox" id="checkbox-newsletter">
+                        <span>Quero receber ofertas e novidades por e-mail</span>
+                    </label>
+                </div>
+
+                <button type="submit" id="botao-enviar-cadastro" class="botao-ouro">
+                    Cadastrar <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="rodape-auth">
+                    <p>Já tem uma conta? <a routerLink="/login" id="link-ir-login">Faça login</a></p>
+                </div>
+            </form>
+        </section>
+
     </div>
 </div>

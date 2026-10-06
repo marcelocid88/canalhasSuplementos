@@ -1,0 +1,340 @@
+:host {
+    display: block;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tela-auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    padding: 60px 20px;
+    box-sizing: border-box;
+    background-color: #050505;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.92)),
+        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-auth {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    width: 100%;
+    max-width: 960px;
+    background-color: #111;
+    border: 1px solid #222;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.card-auth.largo {
+    max-width: 1140px;
+    grid-template-columns: 0.7fr 1.3fr;
+}
+
+.painel-marca {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 50px 40px;
+    border-right: 1px solid #222;
+    background-image: linear-gradient(160deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.95) 75%),
+        url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=900&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+
+.painel-marca .logo {
+    width: 150px;
+    height: auto;
+}
+
+.etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: flex-start;
+    padding: 6px 12px;
+    border: 1px solid rgba(247, 195, 37, 0.5);
+    border-radius: 4px;
+    color: #f7c325;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.titulo-marca {
+    margin: 16px 0 0;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.titulo-marca span {
+    display: block;
+    background: linear-gradient(180deg, #f7c325 0%, #d48e00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lista-beneficios {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0;
+    padding: 24px 0 0;
+    list-style: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.lista-beneficios li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.lista-beneficios i {
+    min-width: 28px;
+    color: #f7c325;
+    font-size: 20px;
+    text-align: center;
+}
+
+.lista-beneficios strong {
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.lista-beneficios small {
+    color: #aaa;
+    font-size: 11px;
+}
+
+.painel-form {
+    padding: 50px 45px;
+}
+
+.cabecalho-form {
+    margin-bottom: 30px;
+}
+
+.cabecalho-form .subtitulo {
+    margin: 0 0 8px;
+    color: #f7c325;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.cabecalho-form h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.secao-form {
+    margin: 10px 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2a2a2a;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.grade-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 18px;
+}
+
+.grade-form .inteiro {
+    grid-column: 1 / -1;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    color: #aaa;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.campo-entrada {
+    position: relative;
+}
+
+.campo-entrada > i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.campo-entrada select {
+    cursor: pointer;
+}
+
+.campo-entrada input,
+.campo-entrada select {
+    width: 100%;
+    padding: 14px 14px 14px 44px;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 6px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+    color-scheme: dark;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo-entrada input::placeholder {
+    color: #555;
+}
+
+.campo-entrada input:focus,
+.campo-entrada select:focus {
+    border-color: #f7c325;
+    box-shadow: 0 0 0 3px rgba(247, 195, 37, 0.15);
+    outline: none;
+}
+
+.opcoes-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin: 4px 0 24px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.opcoes-form.coluna {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.opcoes-form label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.opcoes-form input[type='checkbox'] {
+    margin: 2px 0 0;
+    accent-color: #f7c325;
+}
+
+.painel-form a {
+    color: #f7c325;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.painel-form a:hover {
+    text-decoration: underline;
+}
+
+.botao-ouro {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 32px;
+    background: linear-gradient(180deg, #f7c325 0%, #d89305 100%);
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(247, 195, 37, 0.3);
+    color: #000;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-ouro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(247, 195, 37, 0.5);
+    background: linear-gradient(180deg, #fcd043 0%, #e59d0a 100%);
+}
+
+.rodape-auth {
+    margin-top: 25px;
+    color: #ccc;
+    font-size: 13px;
+    text-align: center;
+}
+
+.rodape-auth p {
+    margin: 0 0 10px;
+}
+
+.rodape-auth .troca-area {
+    padding-top: 18px;
+    border-top: 1px solid #222;
+    font-size: 12px;
+}
+
+@media (max-width: 860px) {
+    .card-auth,
+    .card-auth.largo {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+    }
+
+    .painel-marca {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .tela-auth {
+        padding: 30px 16px;
+    }
+
+    .painel-form {
+        padding: 35px 22px;
+    }
+
+    .grade-form {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-form h2 {
+        font-size: 24px;
+    }
+}

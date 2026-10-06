@@ -1,0 +1,72 @@
+<div class="tela-auth">
+    <div class="card-auth">
+
+        <aside class="painel-marca">
+            <div>
+                <img src="/assets/logo/canalhas-logo.png" alt="Canalha's Suplementos" class="logo">
+            </div>
+
+            <div>
+                <span class="etiqueta"><i class="fa-solid fa-lock"></i> Área restrita</span>
+                <h1 class="titulo-marca">Painel do <span>colaborador</span></h1>
+            </div>
+
+            <ul class="lista-beneficios">
+                <li>
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                    <div><strong>Gestão de estoque</strong><small>Produtos sempre em dia</small></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-receipt"></i>
+                    <div><strong>Pedidos e vendas</strong><small>Acompanhe cada etapa</small></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-users"></i>
+                    <div><strong>Atendimento ao cliente</strong><small>Suporte de verdade</small></div>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="painel-form">
+            <div class="cabecalho-form">
+                <p class="subtitulo">Acesso exclusivo da equipe</p>
+                <h2>Login do colaborador</h2>
+            </div>
+
+            <form id="form-login-colaborador" (submit)="entrar($event)">
+                <div class="campo">
+                    <label for="colaborador-usuario">Matrícula ou e-mail corporativo</label>
+                    <div class="campo-entrada">
+                        <i class="fa-solid fa-id-badge"></i>
+                        <input type="text" id="colaborador-usuario" required placeholder="Ex.: CS0001 ou nome@canalhas.com.br" autocomplete="username">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="colaborador-senha">Senha</label>
+                    <div class="campo-entrada">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="colaborador-senha" required placeholder="••••••••" autocomplete="current-password">
+                    </div>
+                </div>
+
+                <div class="opcoes-form">
+                    <label for="colaborador-lembrar">
+                        <input type="checkbox" id="colaborador-lembrar"> Manter conectado
+                    </label>
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" id="botao-enviar-login-colaborador" class="botao-ouro">
+                    Acessar painel <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="rodape-auth">
+                    <p>Novo colaborador? <a routerLink="/colaborador/cadastro" id="link-cadastro-colaborador">Cadastre-se</a></p>
+                    <p class="troca-area">Não é colaborador? <a routerLink="/login" id="link-login-cliente">Ir para a área do cliente</a></p>
+                </div>
+            </form>
+        </section>
+
+    </div>
+</div>

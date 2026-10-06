@@ -1,0 +1,167 @@
+<div class="tela-auth">
+    <div class="card-auth largo">
+
+        <aside class="painel-marca">
+            <div>
+                <img src="/assets/logo/canalhas-logo.png" alt="Canalha's Suplementos" class="logo">
+            </div>
+
+            <div>
+                <span class="etiqueta"><i class="fa-solid fa-lock"></i> Área restrita</span>
+                <h1 class="titulo-marca">Junte-se ao <span>time</span></h1>
+            </div>
+
+            <ul class="lista-beneficios">
+                <li>
+                    <i class="fa-solid fa-id-badge"></i>
+                    <div><strong>Acesso individual</strong><small>Login com sua matrícula</small></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-user-shield"></i>
+                    <div><strong>Permissões por cargo</strong><small>Cada um no seu setor</small></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div><strong>Dados protegidos</strong><small>Informações da equipe seguras</small></div>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="painel-form">
+            <div class="cabecalho-form">
+                <p class="subtitulo">Equipe Canalha's Suplementos</p>
+                <h2>Cadastro de colaborador</h2>
+            </div>
+
+            <form id="form-cadastro-colaborador" (submit)="cadastrar($event)">
+
+                <h3 class="secao-form">Dados pessoais</h3>
+                <div class="grade-form">
+                    <div class="campo inteiro">
+                        <label for="colaborador-nome">Nome completo</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="colaborador-nome" required minlength="3" placeholder="Nome completo do colaborador" autocomplete="name">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="colaborador-cpf">CPF</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-id-card"></i>
+                            <input type="text" id="colaborador-cpf" required placeholder="Somente números" inputmode="numeric">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="colaborador-data-nascimento">Data de nascimento</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-calendar"></i>
+                            <input type="date" id="colaborador-data-nascimento" required>
+                        </div>
+                    </div>
+
+                    <div class="campo inteiro">
+                        <label for="colaborador-telefone">Telefone</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="colaborador-telefone" required placeholder="DDD + número" autocomplete="tel">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="secao-form">Dados profissionais</h3>
+                <div class="grade-form">
+                    <div class="campo">
+                        <label for="colaborador-matricula">Matrícula</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-id-badge"></i>
+                            <input type="text" id="colaborador-matricula" required placeholder="Ex.: CS0001">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="colaborador-data-admissao">Data de admissão</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <input type="date" id="colaborador-data-admissao" required>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="colaborador-cargo">Cargo</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <select id="colaborador-cargo" required>
+                                <option value="" disabled selected>Selecione o cargo</option>
+                                <option value="Vendedor">Vendedor</option>
+                                <option value="Atendente">Atendente</option>
+                                <option value="Estoquista">Estoquista</option>
+                                <option value="Gerente">Gerente</option>
+                                <option value="Administrador">Administrador</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="colaborador-setor">Setor</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-sitemap"></i>
+                            <select id="colaborador-setor" required>
+                                <option value="" disabled selected>Selecione o setor</option>
+                                <option value="Vendas">Vendas</option>
+                                <option value="Atendimento">Atendimento</option>
+                                <option value="Estoque e Logística">Estoque e Logística</option>
+                                <option value="Financeiro">Financeiro</option>
+                                <option value="Administração">Administração</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="secao-form">Acesso ao sistema</h3>
+                <div class="grade-form">
+                    <div class="campo inteiro">
+                        <label for="colaborador-email">E-mail corporativo</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="colaborador-email" required placeholder="nome@canalhas.com.br" autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="colaborador-senha">Senha</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="colaborador-senha" required placeholder="Crie uma senha" autocomplete="new-password">
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="colaborador-confirmar-senha">Confirmar senha</label>
+                        <div class="campo-entrada">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="colaborador-confirmar-senha" required placeholder="Repita a senha" autocomplete="new-password">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="opcoes-form coluna">
+                    <label for="checkbox-declaracao">
+                        <input type="checkbox" id="checkbox-declaracao" required>
+                        <span>Declaro que as informações são verdadeiras e aceito a <a href="#">Política de Privacidade</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" id="botao-enviar-cadastro-colaborador" class="botao-ouro">
+                    Cadastrar colaborador <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="rodape-auth">
+                    <p>Já tem acesso? <a routerLink="/colaborador/login" id="link-ir-login-colaborador">Faça login</a></p>
+                </div>
+            </form>
+        </section>
+
+    </div>
+</div>

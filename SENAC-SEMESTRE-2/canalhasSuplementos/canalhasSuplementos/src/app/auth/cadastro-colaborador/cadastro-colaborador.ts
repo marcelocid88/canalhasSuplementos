@@ -3,15 +3,15 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   imports: [RouterLink],
-  selector: 'app-cadastro',
-  styleUrls: ['../auth.css', './cadastro.css'],
-  templateUrl: './cadastro.html',
+  selector: 'app-cadastro-colaborador',
+  styleUrls: ['../auth.css', './cadastro-colaborador.css'],
+  templateUrl: './cadastro-colaborador.html',
 })
-export class Cadastro {
+export class CadastroColaborador {
   constructor(private router: Router) {}
 
   cadastrar(evento: Event) {
     evento.preventDefault();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/colaborador/login']);
   }
 }

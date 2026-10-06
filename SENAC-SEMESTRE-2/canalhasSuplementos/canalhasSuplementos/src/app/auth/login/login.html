@@ -1,29 +1,72 @@
-<div class="tela-login">
-    <div class="card-login">
-        <h2>Bem-vindo</h2>
-        <p class="subtitulo-login">Acesse sua conta</p>
+<div class="tela-auth">
+    <div class="card-auth">
 
-        <form id="form-login">
-            <div class="entrada">
-                <input type="text" id="usuario" placeholder="E-mail ou CPF" required>
-            </div>
-            
-            <div class="entrada">
-                <input type="password" id="senha" placeholder="Senha" required>
+        <aside class="painel-marca">
+            <div>
+                <img src="/assets/logo/canalhas-logo.png" alt="Canalha's Suplementos" class="logo">
             </div>
 
-            <div class="acoes-form">
-                <label for="checkbox-lembrar">
-                    <input type="checkbox" class="checkbox-lembrar"> Lembrar de mim
-                </label>
+            <div>
+                <span class="etiqueta"><i class="fa-solid fa-bolt"></i> Área do cliente</span>
+                <h1 class="titulo-marca">Bem-vindo <span>de volta</span></h1>
             </div>
 
-            <button type="submit" id="botao-enviar-login" class="botao-ouro">Entrar</button>
+            <ul class="lista-beneficios">
+                <li>
+                    <i class="fa-solid fa-box-open"></i>
+                    <div><strong>Acompanhe seus pedidos</strong><small>Do pagamento até a entrega</small></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-tags"></i>
+                    <div><strong>Ofertas exclusivas</strong><small>Descontos para quem é da casa</small></div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div><strong>Compra segura</strong><small>Seus dados protegidos</small></div>
+                </li>
+            </ul>
+        </aside>
 
-            <div class="rodape-login">
-                <p>Ainda nao tem conta? <a routerLink="/cadastro" id="link-cadastro">Cadastre-se</a></p>
+        <section class="painel-form">
+            <div class="cabecalho-form">
+                <p class="subtitulo">Acesse sua conta</p>
+                <h2>Entrar</h2>
             </div>
 
-        </form>
+            <form id="form-login" (submit)="entrar($event)">
+                <div class="campo">
+                    <label for="usuario">E-mail ou CPF</label>
+                    <div class="campo-entrada">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="usuario" required placeholder="seuemail@exemplo.com" autocomplete="username">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="campo-entrada">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="senha" required placeholder="••••••••" autocomplete="current-password">
+                    </div>
+                </div>
+
+                <div class="opcoes-form">
+                    <label for="checkbox-lembrar">
+                        <input type="checkbox" id="checkbox-lembrar"> Lembrar de mim
+                    </label>
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" id="botao-enviar-login" class="botao-ouro">
+                    Entrar <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <div class="rodape-auth">
+                    <p>Ainda não tem conta? <a routerLink="/cadastro" id="link-cadastro">Cadastre-se</a></p>
+                    <p class="troca-area">É colaborador? <a routerLink="/colaborador/login" id="link-login-colaborador">Acesse a área restrita</a></p>
+                </div>
+            </form>
+        </section>
+
     </div>
 </div>
