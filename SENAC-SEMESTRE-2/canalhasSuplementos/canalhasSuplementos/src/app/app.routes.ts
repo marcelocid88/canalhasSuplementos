@@ -13,7 +13,6 @@ export const routes: Routes = [
     { path:'cadastro', component:Cadastro},
     { path:'colaborador/login', component:LoginColaborador },
     { path:'colaborador/cadastro', component:CadastroColaborador },
-    { path:'produtos', component:Produtos}
     { path:'produtos', component:Produtos},
     { path:'cart', component:Cart}
 
